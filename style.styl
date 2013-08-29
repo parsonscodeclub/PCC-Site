@@ -53,8 +53,8 @@ article //Article boxes
 
 
 p //Paragraphs & Links
-  font-family: $serif
-  font-weight: 300
+  font-family $serif
+  font-weight 300
   color $mgrey
   line-height 1.3em
 a
@@ -67,22 +67,22 @@ a
 
 
 .tag
-  text-transform: lowercase
+  text-transform lowercase
   background $tagColor
   color $tagText
   font-family $serif
   font-weight 300
   font-style normal
-  line-height: 1.3em
+  line-height 1.3em
   font-size 0.9em
   padding 0.3em 0.5em 0.2em 0.2em
   margin-left 1.2em
-  margin-bottom: 0.8em
-  position: relative
-  height: 26px;
+  margin-bottom 0.8em
+  position relative
+  height 26px
   display inline-block
   &:first-child
-    margin-left: 13px
+    margin-left 13px
   &:before
     content ""
     position absolute
@@ -91,8 +91,8 @@ a
     border-width 13px
     border-style solid
     border-color transparent $tagColor transparent transparent
-    left: -26px
-    top: 0
+    left -26px
+    top 0
 a.tag:hover
   background $tagColorHover
   color $tagTextHover
@@ -236,14 +236,14 @@ section
     grid-row($behavior: nest)
     margin-top $buffer*3
     h2
-      margin-left: $buffer
+      margin-left $buffer
   .tagResource
     column 4
   .instagram
     grid-row($behavior: nest)
     margin-top $buffer*3
     h2
-      margin-left: $buffer
+      margin-left $buffer
     a
       column 2
       img
