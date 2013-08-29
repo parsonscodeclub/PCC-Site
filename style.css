@@ -194,9 +194,12 @@ footer .contact {
 .resourceList h4 {
   margin-top: 1.5em;
   text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  margin: 20px;
+  height: 13px;
 }
 .resourceList h4 .tag {
-  margin-left: -13px;
+  margin-left: 4px;
 }
 .resourceList .resource {
   padding-bottom: 1em;
