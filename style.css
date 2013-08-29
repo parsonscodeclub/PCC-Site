@@ -125,6 +125,7 @@ nav ul li a {
   height: 100%;
   font-family: "Calluna Sans", sans-serif;
   font-style: normal;
+  transition: background 0.3s;
 }
 nav ul grid-row:hover,
 nav ul li a:hover {
