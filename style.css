@@ -1,0 +1,338 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+html {
+  font-family: "Calluna Sans", sans-serif;
+  font-size: 16px;
+}
+section {
+  margin-top: 20px;
+}
+h2 {
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 1em;
+}
+h4 {
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 700;
+  color: #006c8a;
+  margin: 1em 0 0.8em;
+}
+article {
+  background: #f4f4f4;
+  border-top: 3px solid #4e63a9;
+}
+p {
+  font-family: "Kepler Std", serif;
+  font-weight: 300;
+  color: #6f6f6f;
+  line-height: 1.3em;
+}
+a {
+  color: #4e63a9;
+}
+a.more {
+  font-style: italic;
+  font-family: "Kepler Std", serif;
+  font-weight: 300;
+  text-decoration: underline;
+}
+.tag {
+  text-transform: lowercase;
+  background: #d6df58;
+  color: rgba(0,0,0,0.8);
+  font-family: "Kepler Std", serif;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.3em;
+  font-size: 0.9em;
+  padding: 0.3em 0.5em 0.2em 0.2em;
+  margin-left: 1.2em;
+  position: relative;
+  height: 26px;
+  display: inline-block;
+}
+.tag:first-child {
+  margin-left: 13px;
+}
+.tag:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 13px;
+  border-style: solid;
+  border-color: transparent #d6df58 transparent transparent;
+  left: -26px;
+  top: 0;
+}
+a.tag:hover {
+  background: #fba343;
+  color: #000;
+}
+a.tag:hover:before {
+  border-color: transparent #fba343 transparent transparent;
+}
+.pageHeader {
+  width: 100%;
+}
+.pageHeader canvas {
+  background: #00b2ae;
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  float: left;
+  height: 399px;
+  background: url("header.png") top center;
+}
+nav {
+  zoom: 1;
+  background: #4e63a9;
+  width: 100%;
+}
+nav:before,
+nav:after {
+  content: "";
+  display: table;
+}
+nav:after {
+  clear: both;
+}
+nav ul {
+  width: 30em;
+  margin: 0 auto;
+}
+nav ul grid-row,
+nav ul li a {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 33.33333333333333%;
+  float: left;
+  float: left;
+  padding: 1.5em;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.1em;
+  height: 100%;
+  font-family: "Calluna Sans", sans-serif;
+  font-style: normal;
+}
+nav ul grid-row:hover,
+nav ul li a:hover {
+  background: #d6df58;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+.pageContent {
+  zoom: 1;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 960px;
+}
+.pageContent:before,
+.pageContent:after {
+  content: "";
+  display: table;
+}
+.pageContent:after {
+  clear: both;
+}
+.content {
+  padding: 20px;
+  zoom: 1;
+}
+.content:before,
+.content:after {
+  content: "";
+  display: table;
+}
+.content:after {
+  clear: both;
+}
+footer {
+  width: 100%;
+}
+footer .partners,
+footer .contact {
+  width: 100%;
+  margin: 0;
+  height: 3em;
+}
+footer .partners {
+  background: #00b2ae;
+}
+footer .contact {
+  background: #4e63a9;
+}
+.event background,
+.event header {
+  height: 130px;
+  background: rgba(0,0,0,0.7);
+  position: relative;
+}
+.event background h3,
+.event header h3 {
+  color: #fff;
+  padding: 1em;
+  position: absolute;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  bottom: 0;
+  font-size: 16px;
+  font-weight: 300;
+}
+.resourceList h4 {
+  margin-top: 1.5em;
+  text-align: center;
+}
+.resourceList h4 .tag {
+  margin-left: -13px;
+}
+.resourceList .resource {
+  padding-bottom: 1em;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 1em;
+}
+.resourceList .resource .title {
+  font-size: 1.2em;
+  line-height: 1.2em;
+  margin-bottom: 0.5em;
+  display: block;
+}
+.resourceList .resource .title:hover {
+  text-decoration: underline;
+}
+.resourceList .resource:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+section {
+  zoom: 1;
+}
+section:before,
+section:after {
+  content: "";
+  display: table;
+}
+section:after {
+  clear: both;
+}
+.homepage .events {
+  width: auto;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: 0;
+  max-width: none;
+}
+.homepage .events .nextEvent {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 66.66666666666666%;
+  float: left;
+}
+.homepage .events .nextEvent .what {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 58.333333333333336%;
+  float: left;
+}
+.homepage .events .nextEvent .when {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 41.66666666666667%;
+  float: left;
+}
+.homepage .events .nextEvent .where {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 41.66666666666667%;
+  float: left;
+}
+.homepage .events .nextEvent .tags {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 58.333333333333336%;
+  right: 41.66666666666667%;
+  left: auto;
+  float: left;
+  margin-top: 20px;
+}
+.homepage .events .nextEvent .facebook {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 41.66666666666667%;
+  left: 58.333333333333336%;
+  right: auto;
+  float: left;
+  margin-top: 20px;
+}
+.homepage .events .weeklyMeetup {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 33.33333333333333%;
+  float: left;
+}
+.homepage .events .weeklyMeetup .what,
+.homepage .events .weeklyMeetup .when,
+.homepage .events .weeklyMeetup .where {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  float: left;
+}
+.homepage .learn {
+  width: auto;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: 0;
+  max-width: none;
+  margin-top: 60px;
+}
+.homepage .learn h2 {
+  margin-left: 20px;
+}
+.homepage .tagResource {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 33.33333333333333%;
+  float: left;
+}
+.homepage .instagram {
+  width: auto;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: 0;
+  max-width: none;
+  margin-top: 60px;
+}
+.homepage .instagram h2 {
+  margin-left: 20px;
+}
+.homepage .instagram a {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 16.666666666666664%;
+  float: left;
+}
+.homepage .instagram a img {
+  width: 100%;
+}

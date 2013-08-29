@@ -1,0 +1,131 @@
+clearfix()
+  &:before
+  &:after
+    content: ""
+    display: table
+  &:after
+    clear: both
+  zoom: 1
+
+test()
+  border 1px solid blue
+
+
+//
+// Grid Variables
+//
+$include-html-grid-classes ?= $include-html-classes;
+
+$buffer ?= 20px;
+$rowWidth ?= 1000px;
+$columnGutter ?= $buffer * 2;
+$totalColumns ?= 12;
+
+//
+// Grid Function
+//
+percentage(number) {
+  (number * 100)%;
+}
+gridCalc($colNumber, $totalColumns) {
+  percentage(($colNumber / $totalColumns));
+}
+
+//
+// Grid Mixins
+//
+
+// For creating container, nested, and collapsed rows.
+grid-row($behavior = false) {
+
+  // use include grid-row(nest); to include a nested row
+  if $behavior == nest {
+    width: auto;
+    margin-left: -($columnGutter/2);
+    margin-right: -($columnGutter/2);
+    margin-top: 0;
+    max-width: none;
+  } else if $behavior == collapse {
+  // use include grid-row(collapse); to collapsed a container row margins
+    width: 100%;
+    margin: 0;
+    max-width: $rowWidth;
+  } else if $behavior == nest-collapse {
+    // use include grid-row(nest-collapse); to collapse outer margins on a nested row
+    width: auto;
+    margin: 0;
+    max-width: none;
+  } else {
+    // use include grid-row; to use a container row
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: $rowWidth;
+  }
+
+  // Clearfix for all rows
+  clearfix;
+
+}
+
+// For creating columns - include these inside a media query to control small vs. large grid layouts
+column($columns = false, $last-column = false, $center = false, $offset = false, $push = false, $pull = false, $collapse = false, $float = true) {
+
+  position: relative;
+
+  // If collapsed, get rid of gutter padding
+  if $collapse {
+    padding-left: 0;
+    padding-right: 0;
+  } else if $collapse == false {
+    // Gutter padding whenever a column isn't set to collapse
+    // (use $collapse:null to do nothing)
+    padding-left: ($columnGutter / 2);
+    padding-right: ($columnGutter / 2);
+  }
+
+  // If a column number is given, calculate width
+  if $columns {
+    width: gridCalc($columns, $totalColumns);
+
+    // If last column, float naturally instead of to the right
+    if $last-column {
+      float: right !important;
+      padding-right: 0;
+    }
+  }
+
+  // If offset, calculate appropriate margins
+  if $offset {
+    margin-left: gridCalc($offset, $totalColumns);
+  }
+
+  // Source Ordering, adds left/right depending on which you use.
+  if $push {
+    left: gridCalc($push, $totalColumns);
+    right: auto;
+  }
+  if $pull {
+    right: gridCalc($pull, $totalColumns);
+    left: auto;
+  }
+
+  // If centered, get rid of float and add appropriate margins
+  if $center {
+    margin-left: auto;
+    margin-right: auto;
+    float: none !important;
+  }
+
+  if $float {
+    if $float == left or $float == true {
+      float: left;
+    } else if $float == right {
+      float: right;
+    } else {
+      float: none;
+    }
+  }
+}

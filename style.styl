@@ -1,0 +1,247 @@
+@import "grid"
+
+// Variables
+// Brand Colors
+$teal = #00b2ae
+$orange = #fba343
+$lgreen = #d6df58
+$dgreen = #a3cf5e
+$lblue = #9ddbcd
+$dblue = #006c8a
+$purple = #4e63a9
+
+$lgrey = #f4f4f4
+$mgrey = #6f6f6f
+$dgrey = #1a1a1a
+
+$divider = #e5e5e5
+
+$tagColor = $lgreen
+$tagText = rgba(0,0,0,0.8)
+$tagColorHover = $orange
+$tagTextHover = black
+
+$sans = "Calluna Sans", sans-serif
+$serif = "Kepler Std", serif
+
+// Global
+*
+  box-sizing border-box
+  text-decoration none
+html
+  font-family $sans
+  font-size 16px
+section
+  margin-top $buffer
+
+h2 //Headers
+  text-transform uppercase
+  font-size 1em
+  font-weight 900
+  color $dgrey
+  margin-bottom 1em
+h4
+  text-transform uppercase
+  font-size 1em
+  font-weight 700
+  color $dblue
+  margin 1em 0 0.8em
+
+article //Article boxes
+  background $lgrey
+  border-top 3px solid $purple
+
+
+p //Paragraphs & Links
+  font-family: $serif
+  font-weight: 300
+  color $mgrey
+  line-height 1.3em
+a
+  color $purple
+  &.more
+    font-style italic
+    font-family $serif
+    font-weight 300
+    text-decoration underline
+
+
+.tag
+  text-transform: lowercase
+  background $tagColor
+  color $tagText
+  font-family $serif
+  font-weight 300
+  font-style normal
+  line-height: 1.3em
+  font-size 0.9em
+  padding 0.3em 0.5em 0.2em 0.2em
+  margin-left 1.2em
+  position: relative
+  height: 26px;
+  display inline-block
+  &:first-child
+    margin-left: 13px
+  &:before
+    content ""
+    position absolute
+    width 0
+    height 0
+    border-width 13px
+    border-style solid
+    border-color transparent $tagColor transparent transparent
+    left: -26px
+    top: 0
+a.tag:hover
+  background $tagColorHover
+  color $tagTextHover
+  &:before
+    border-color transparent $tagColorHover transparent transparent
+
+
+// Header
+.pageHeader
+  width 100%
+  canvas
+    background $teal
+    column 12
+    height 399px
+    background url('header.png') top center
+
+nav // Nav
+  clearfix()
+  background $purple
+  width 100%
+  ul
+    width 30em
+    margin 0 auto
+    grid-row
+    li a
+      column 4
+      float left
+      padding 1.5em
+      color white
+      text-transform uppercase
+      text-align center
+      letter-spacing 0.1em
+      height 100%
+      font-family $sans
+      font-style normal
+      &:hover
+        background $lgreen
+        color $dgrey
+        font-weight 700
+
+
+// Content
+.pageContent
+  clearfix()
+  grid-row
+  margin $buffer*2 auto
+  width 90%
+  max-width 960px
+
+.content
+  padding $buffer
+  //grid-row
+  clearfix()
+
+// Footer
+footer
+  width 100%
+  .partners, .contact
+    width 100%
+    margin 0
+    height 3em
+  .partners
+    background $teal
+  .contact
+    background $purple
+
+
+// Events
+.event
+  background
+  header
+    height 130px
+    background rgba(0,0,0,0.7)
+    position relative
+    h3
+      color white
+      padding 1em
+      position absolute
+      width 100%
+      background rgba(0,0,0,0.7)
+      bottom 0
+      font-size 16px
+      font-weight 300
+
+// Learn
+.resourceList
+  h4
+    margin-top 1.5em
+    text-align center
+    .tag
+      margin-left -13px
+  .resource
+    .title
+      font-size 1.2em
+      line-height 1.2em
+      margin-bottom 0.5em
+      display block
+      &:hover
+        text-decoration underline
+    padding-bottom 1em
+    border-bottom 1px solid $divider
+    margin-bottom 1em
+    &:last-child
+      padding-bottom 0
+      margin-bottom 0
+      border-bottom 0
+
+
+
+
+// Page Specific Layout
+
+// Homepage
+section
+  clearfix()
+.homepage
+  .events
+    grid-row($behavior: nest)
+    .nextEvent
+      column 8
+      .what
+        column 7
+      .when
+        column 5
+      .where
+        column 5
+      .tags
+        column(7, $pull: 5)
+        margin-top $buffer
+      .facebook
+        column(5, $push: 7)
+        margin-top $buffer
+
+    .weeklyMeetup
+      column 4
+      .what, .when, .where
+        column 12
+  .learn
+    grid-row($behavior: nest)
+    margin-top $buffer*3
+    h2
+      margin-left: $buffer
+  .tagResource
+    column 4
+  .instagram
+    grid-row($behavior: nest)
+    margin-top $buffer*3
+    h2
+      margin-left: $buffer
+    a
+      column 2
+      img
+        width 100%
